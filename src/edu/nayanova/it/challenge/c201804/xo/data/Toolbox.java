@@ -1,7 +1,7 @@
 package edu.nayanova.it.challenge.c201804.xo.data;
 
 public class Toolbox {
-    public static String BytetoChar(byte sign)
+    public static String ByteToChar(byte sign)
     {
         switch (sign)
         {

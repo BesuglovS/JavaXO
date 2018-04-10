@@ -1,7 +1,7 @@
 package edu.nayanova.it.challenge.c201804.xo.data;
 
 public class XoField {
-    public byte[][] F;
+    public final byte[][] F;
 
     public XoField() {
         F = new byte[3][3];

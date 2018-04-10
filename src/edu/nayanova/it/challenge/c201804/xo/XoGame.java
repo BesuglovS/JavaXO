@@ -9,16 +9,16 @@ import edu.nayanova.it.challenge.c201804.xo.engines.RandomEngine;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class XoGame {
+class XoGame {
     private final byte type;
     private XoField field;
 
-    public XoGame(byte gameType) {
+    XoGame(byte gameType) {
         type = gameType;
         field = new XoField();
     }
 
-    public void RunGame() throws IOException {
+    void RunGame() throws IOException {
         switch (type)
         {
             case 1:
@@ -53,7 +53,7 @@ public class XoGame {
         }
         else
         {
-            System.out.println("Победа! Выиграли - " + Toolbox.BytetoChar(Finished()));
+            System.out.println("Победа! Выиграли - " + Toolbox.ByteToChar(Finished()));
         }
 
         System.in.read();
@@ -141,7 +141,7 @@ public class XoGame {
         {
             for (int j = 0; j <= 2; j++)
             {
-                System.out.print(Toolbox.BytetoChar(field.F[i][j]) + " ");
+                System.out.print(Toolbox.ByteToChar(field.F[i][j]) + " ");
             }
             System.out.println();
         }
@@ -154,8 +154,8 @@ public class XoGame {
 
     private static byte DetectMove(XoField field) // Следующий ход делают: 1 - X; 2 - O
     {
-        byte xcol = 0,
-             ocol = 0;
+        byte xCol = 0,
+             oCol = 0;
         for (int i = 0; i <= 2; i++)
         {
             for (int j = 0; j <= 2; j++)
@@ -163,16 +163,16 @@ public class XoGame {
                 switch (field.F[i][j])
                 {
                     case 1:
-                        xcol++;
+                        xCol++;
                         break;
                     case 2:
-                        ocol++;
+                        oCol++;
                         break;
                 }
             }
         }
 
-        return (byte)((xcol > ocol) ? 2 : 1);
+        return (byte)((xCol > oCol) ? 2 : 1);
     }
 
     private void HumanVsSystem(boolean humanPlaysForX) throws IOException {
@@ -223,7 +223,7 @@ public class XoGame {
             }
             else
             {
-                System.out.println("Победа! Выиграли - " + Toolbox.BytetoChar(Finished()));
+                System.out.println("Победа! Выиграли - " + Toolbox.ByteToChar(Finished()));
             }
         }
 
@@ -289,7 +289,7 @@ public class XoGame {
         }
         else
         {
-            System.out.println("Победа! Выиграли - " + Toolbox.BytetoChar(Finished()));
+            System.out.println("Победа! Выиграли - " + Toolbox.ByteToChar(Finished()));
         }
 
         System.in.read();

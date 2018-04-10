@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Position {
-    public XoField Field;
-    public byte Evaluation;
-    public List<Position> Next;
+    private final XoField Field;
+    private final byte Evaluation;
+    private final List<Position> Next;
 
     public Position() {
         Field = new XoField();
